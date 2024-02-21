@@ -5,13 +5,27 @@ import Header from "./header/Header";
 import LogoutBtn from "./header/LogoutBtn";
 import Button from "./Button"
 import Input from "./Input"
+import Select from "./Select";
+import RTE from "./RTE";
+import PostCard from "./PostCard.jsx"
+import AuthLayout from "./AuthLayout"
+import Signup from "./SignUp";
+import Login from "./Login";
+import PostForm from "./post-form/PostForm";
 
 export {
-    Footer,
     Header,
-    Logo,
+    Footer,
     Container,
+    Logo,
     LogoutBtn,
-    Input,
+    RTE,
+    Signup,
+    Login,
     Button,
+    PostForm,
+    PostCard,
+    AuthLayout,
+    Input,
+    Select,
 };

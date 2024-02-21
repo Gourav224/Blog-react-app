@@ -24,13 +24,11 @@ function App() {
 
   return !loading ? (
     <div className="min-h-screen flex flex-wrap content-between bg-gray-500">
-      
       <div className="w-full block">
         <Header />
         <main>
-          todo
-          {" "}
-          <Outlet></Outlet>
+          {/* {" "} */}
+          <Outlet/>
         </main>
         <Footer />
       </div>

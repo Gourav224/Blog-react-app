@@ -33,14 +33,13 @@ const PostForm = ({ post }) => {
         navigate(`/post/${dpPost.$id}`);
       }
     } else {
-      const file = service.uploadFile(data.image[0]);
-
+      const file = await service.uploadFile(data.image[0]);
       if (file) {
         const fileId = file.$id;
         data.featuredImage = fileId;
         const dpPost = await service.createPost({
           ...data,
-          userId: userData.$id,
+          userId: userData.userData.$id,
         });
         if (dpPost) {
           navigate(`/post/${dpPost.$id}`);

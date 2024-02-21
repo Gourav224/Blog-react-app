@@ -13,7 +13,7 @@ export class Service {
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
     }
-    async createPost({ title, slug, content, featured, status, userId }) {
+    async createPost({ title, slug, content, featuredImage, status, userId }) {
         try {
             const database = await this.databases.createDocument(
                 config.appwriteDatabaseId,
@@ -22,7 +22,7 @@ export class Service {
                 {
                     title,
                     content,
-                    featured,
+                    featuredImage,
                     status,
                     userId,
                 }
@@ -98,6 +98,7 @@ export class Service {
                 ID.unique(),
                 file,
             );
+
         } catch (error) {
             console.log("Appwrite Service::uploadFile::Error: ", error);
 

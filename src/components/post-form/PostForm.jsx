@@ -39,7 +39,7 @@ const PostForm = ({ post }) => {
         data.featuredImage = fileId;
         const dpPost = await service.createPost({
           ...data,
-          userId: userData.userData.$id,
+          userId: userData.$id,
         });
         if (dpPost) {
           navigate(`/post/${dpPost.$id}`);
@@ -83,6 +83,7 @@ const PostForm = ({ post }) => {
           label="Slug :"
           placeholder="Slug"
           className="mb-4"
+          readonly="readonly"
           {...register("slug", { required: true })}
           onInput={(e) => {
             setValue("slug", slugTransform(e.currentTarget.value), {
@@ -108,7 +109,7 @@ const PostForm = ({ post }) => {
         {post && (
           <div className="w-full mb-4">
             <img
-              src={appwriteService.getFilePreview(post.featuredImage)}
+              src={service.getFilePreview(post.featuredImage)}
               alt={post.title}
               className="rounded-lg"
             />

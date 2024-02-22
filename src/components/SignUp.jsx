@@ -25,6 +25,8 @@ const SignUp = () => {
       }
     } catch (error) {
       seterror(error.message);
+      console.log(error.message)
+      console.error(error);
     }
   };
 
